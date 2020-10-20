@@ -21,12 +21,6 @@ const computersTurn = () => {
         (computersPick === 1) ? 'paper':
         (computersPick === 2) ? 'scissor':
         '';
-    /*
-        let computerChoice = ['rock','paper', 'scissor'];
-        let computerPick = computerChoice[Math.floor(Math.random()*Math.floor(max))];
-        return computerPick;
-        
-    */
 };
 
 const scoreUpdate = () => {
