@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class='header'>
+                <h1>Welcome to Rocks Paper Scissor...</h1>
+            </header>
+
+            <article class = 'selection'>
+                <section>
+                    <button type ='button' value='rock' class='rock'>Rock</button>
+                </section>
+                <section>
+                    <button type='button' value='paper' class='paper'>Paper</button>
+                </section>
+                <section>
+                    <button type='button' value='scissor' class='scissor'>Scissor</button>
+                </section>
+            </article>
+
+            <article class='outcome'>
+                <h4 class='player'>Player 1 has selected : <span class='playerPicked'></span></h4>
+                <h4>The winner of this round is: <span class="whoWon"></span></h4>
+                <h4 class='computer'>Player 2 has selected : <span class='compPicked'></span></h4>
+            </article>
+        </div>
+        <script src="./js/index.js" async defer></script>
+    </body>
+</html>
