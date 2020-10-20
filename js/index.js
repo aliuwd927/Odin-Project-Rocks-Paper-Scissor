@@ -2,6 +2,7 @@ const rockBtn = document.querySelector('.rock');
 const paperBtn = document.querySelector('.paper');
 const scissorBtn = document.querySelector('.scissor');
 const parentEl = document.querySelector('selection');
+
 let pOneScore = document.querySelector('.playerPicked');
 let pTwoScore = document.querySelector('.compPicked');
 let drawScore = document.querySelector('.drawCount');
@@ -23,19 +24,24 @@ const computersTurn = () => {
         '';
 };
 
-const scoreUpdate = () => {
-    
-};
 function draw(){
     drawScore.textContent = drawScoreCount += 1;
 }
 
 function updatePlayerOneScore(){
     pOneScore.textContent = playerOneScore += 1;
+
+    if(playerOneScore === 5){
+        alert('Player One is the Winner');
+    }
 };
 
 function updatePlayerTwoScore(){
     pTwoScore.textContent = playerTwoScore += 1;
+
+        if(playerTwoScore === 5){
+            alert('Player Two is the Winner');
+        }
 };
 
 function readyPlayerOne (e) {
