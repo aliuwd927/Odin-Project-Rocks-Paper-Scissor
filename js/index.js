@@ -2,12 +2,18 @@ const rockBtn = document.querySelector('.rock');
 const paperBtn = document.querySelector('.paper');
 const scissorBtn = document.querySelector('.scissor');
 const parentEl = document.querySelector('selection');
+let pOneScore = document.querySelector('.playerPicked');
+let pTwoScore = document.querySelector('.compPicked');
+let drawScore = document.querySelector('.drawCount');
 let gamesPlayed = 0;
 let playerOneScore = 0;
 let playerTwoScore = 0;
+let drawScoreCount = 0;
+
 const maxTurns = (max) => {
     return computersPick = Math.floor(Math.random()*Math.floor(max));
 };
+
 const computersTurn = () => {
     let computersPick = maxTurns(3);
     return computerResult = 
@@ -22,39 +28,56 @@ const computersTurn = () => {
         
     */
 };
-const readyPlayerOne = (e) => {
+
+const scoreUpdate = () => {
+    
+};
+function draw(){
+    drawScore.textContent = drawScoreCount += 1;
+}
+
+function updatePlayerOneScore(){
+    pOneScore.textContent = playerOneScore += 1;
+};
+
+function updatePlayerTwoScore(){
+    pTwoScore.textContent = playerTwoScore += 1;
+};
+
+function readyPlayerOne (e) {
     const {value} = e.target;
     //console.log({value}); 
     switch(value){
         case 'rock':
             if(computersTurn() === 'rock'){
-                alert('draw');
+                return draw();
             } else if(computersTurn() === 'paper'){
-                alert('Player 2 Score is: ' + (playerTwoScore += 1));
+                return updatePlayerTwoScore();
             }else if(computersTurn() === 'scissor'){
-                alert('Player 1 Score is: ' + (playerOneScore += 1));
-            }   
+                return updatePlayerOneScore();
+            }  
         break;
         case 'paper':
             if(computersTurn() === 'paper'){
-                alert('draw');
+                return draw();
             }else if(computersTurn() === 'scissor'){
-                alert('Player 2 Score is: ' + (playerTwoScore += 1));
+                return updatePlayerTwoScore();
             }else if(computersTurn() === 'rock'){
-                alert('Player 1 Score is: ' + (playerOneScore += 1));
+                return updatePlayerOneScore();
             }
         break;
         case 'scissor':
             if(computersTurn() === 'scissor'){
-                alert('draw');
+                return draw();
             }else if(computersTurn() === 'rock'){
-                alert('Player 2 Score is: ' + (playerTwoScore += 1));
+                return updatePlayerTwoScore();
             }else if(computersTurn() === 'paper'){
-                alert('Player 1 Score is: ' + (playerOneScore += 1));
+                return updatePlayerOneScore();
             }
         break;
     };
 };
+
 rockBtn.addEventListener('click', readyPlayerOne);
 paperBtn.addEventListener('click', readyPlayerOne);
 scissorBtn.addEventListener('click', readyPlayerOne);
